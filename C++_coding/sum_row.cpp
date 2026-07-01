@@ -33,6 +33,37 @@ int max(int arr[][4] , int row ,int col){
     return max;
 }
 
+void printing(int arr[][4] , int row , int col){
+    for(int i=0 ;i<row ; i++){
+        for(int j=0 ; j<col ; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void transpose(int arr[][4] , int row, int col){
+
+    int brr[row][col];
+
+
+    for(int i=0 ; i<row ; i++){
+        for(int j=0; j<col ; j++){
+            swap(arr[i][j], brr[j][i]);
+        }
+    }
+    // printing(brr, row , col);
+
+    cout << endl;
+
+        for(int i=0 ;i<row ; i++){
+        for(int j=0 ; j<col ; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+}
 int main()
 {
     int arr[5][4] = {
@@ -69,6 +100,9 @@ int main()
 
     search_value(arr, key, 5, 4) ;
     cout << endl ;
-    cout << "Max is : " << max(arr,5,4);
+    cout << "Max is : " << max(arr,5,4) << endl;
+
+    transpose(arr,5,4);
+
     return 0;
 }
