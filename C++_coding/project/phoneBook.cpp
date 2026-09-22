@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <iomanip>
+#include <algorithm>
 using namespace std;
 
 class contact
@@ -9,7 +10,6 @@ class contact
 private:
     string phoneNum;
     string name;
-
 public:
     contact(string p, string n)
     {
@@ -49,15 +49,19 @@ public:
     {
         contact c(p, n);
         contacts.push_back(c);
-        cout << "Contact Added Successfully." << endl
-             << endl;
     }
 
     void showContact()
     {
+        cout << "Phone Num " << setw(15) << "Name " << endl;
+        cout << "****************************" << endl;
+        std::sort(contacts.begin(), contacts.end(), [](const contact &a, const contact &b)
+                  { return a.getNum() < b.getNum(); });
+
         for (const contact &c : contacts)
         {
-            c.display();
+            cout << c.getNum() << setw(18) << c.getName() << endl;
+            ;
             cout << endl;
         }
     }
@@ -90,33 +94,29 @@ public:
         cout << "contact not found." << endl;
     }
     void updateContact(string identifier, string newPhone)
-{
-    for (contact& c : contacts)
     {
-        if (c.getName() == identifier || c.getNum() == identifier)
+        for (contact &c : contacts)
         {
-            c.updateNum(newPhone);
+            if (c.getName() == identifier || c.getNum() == identifier)
+            {
+                c.updateNum(newPhone);
 
-            cout << "Contact updated successfully." << endl;
-            return;
+                cout << "Contact updated successfully." << endl;
+                return;
+            }
         }
-    }
 
-    cout << "Contact not found." << endl;
-}
+        cout << "Contact not found." << endl;
+    }
 };
 
 int main()
 {
     phoneBook pb1;
 
-    pb1.addContact("7562995360", "KundanMaurya");
+    pb1.addContact("7562995360", "Kundan");
     pb1.addContact("125468962", "Akhilesh");
+    pb1.addContact("9578895625", "Nothing");
     pb1.showContact();
-    // pb1.deleteContact("KundanMaurya");
-    pb1.showContact();
-    pb1.updateContact("KundanMaurya","6205727933");
-    pb1.showContact();
-
     return 0;
 }

@@ -8,8 +8,8 @@ class user{
         int id = 1;
     public:
         virtual void display() = 0;
-
 };
+
 
 class Employee: public user{
     private:
@@ -21,7 +21,15 @@ class Employee: public user{
         }
 };
 
+class HOD : public Employee{
+    private:
+    protected:
+        
+    public:
+};
+
 int main(){
+
     Employee e1;
     e1.display();
 

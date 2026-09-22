@@ -22,5 +22,15 @@ int main(){
     }
     cout << "2nd Largest " << second << endl;
 
+
+    int sec_large = -1;
+    for(int i=0 ; i<size ;i++){
+        if(arr[i]>sec_large && arr[i]!=largest)
+            sec_large = arr[i];
+    }
+
+    cout << "2nd Largest " << second << endl;
+
+
     return 0;
 }
