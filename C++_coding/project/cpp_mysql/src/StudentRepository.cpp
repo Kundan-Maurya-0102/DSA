@@ -17,7 +17,8 @@ void StudentRepository::createTable()
         "CREATE TABLE IF NOT EXISTS students ("
         "id INT PRIMARY KEY,"
         "name VARCHAR(100),"
-        "age INT"
+        "age INT,"
+        "email VARCHAR(100)"
         ")"
     );
 
@@ -32,10 +33,15 @@ void StudentRepository::save(Student& student)
         database.getConnection()->createStatement();
 
     std::string query =
-        "INSERT INTO students (id, name, age) VALUES (" +
-        std::to_string(student.getId()) + ", '" +
-        student.getName() + "', " +
-        std::to_string(student.getAge()) + ")";
+        "INSERT INTO students (id, name, age, email) VALUES (" +
+        std::to_string(student.getId()) +
+        ", '" +
+        student.getName() +
+        "', " +
+        std::to_string(student.getAge()) +
+        ", '" +
+        student.getEmail() +
+        "')";
 
     stmt->execute(query);
 

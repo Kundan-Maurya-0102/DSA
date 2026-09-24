@@ -3,7 +3,7 @@
 
 #include "Database.hpp"
 #include "Student.hpp"
-
+using namespace stdd;
 class StudentRepository
 {
 private:

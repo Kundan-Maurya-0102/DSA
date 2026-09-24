@@ -4,6 +4,7 @@
 #include "include/Student.hpp"
 #include "include/StudentRepository.hpp"
 
+
 int main()
 {
     Database db;
@@ -17,12 +18,9 @@ int main()
 
     repository.createTable();
 
-    // Student student(1, "Kundan", 19);
-    // repository.save(student);
-
-    Student student2(4, "Khushi", 16);
-    repository.save(student2);
-
+    Student student(5, "Rishi", 19, "kumak63@gmail.com");
+    repository.save(student);
+    
     return 0;
 }
 
