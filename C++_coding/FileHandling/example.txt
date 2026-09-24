@@ -1,0 +1,2 @@
+This is class of JAVA
+ It is object oriented programming
