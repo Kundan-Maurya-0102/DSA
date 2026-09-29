@@ -1,0 +1,869 @@
+
+
+Bilkul. Tumhe **basic OOP already aata hai**, to ye problem set specifically **C++ Linked List + Class** par hoga. Main basic `class Student` banana jaise questions se start nahi karunga, balki pointer + class + dynamic memory + linked-list logic ko combine karunga.
+
+# C++ Problem Set: Linked List + Class
+
+## 🟢 Problem 1: Student Record Manager [EASY]
+
+### Statement
+
+Ek college ko students ke records dynamically store karne hain. Har student ke paas:
+
+* Roll Number
+* Name
+* Marks
+* Next student ka pointer
+
+`Student` ko class ke form mein design karo aur **singly linked list** use karke students ko store karo.
+
+Implement:
+
+1. Student add at beginning
+2. Student display
+3. Total students count
+
+### Input
+
+* Number of operations `Q`
+* `1 ≤ Q ≤ 10^4`
+* Roll number: positive integer
+* Marks: `0–100`
+
+Operations:
+
+```text
+ADD roll name marks
+DISPLAY
+COUNT
+```
+
+### Output
+
+Operations ke according student records display karo.
+
+### Example
+
+**Input**
+
+```text
+ADD 101 Rahul 78
+ADD 102 Aman 85
+DISPLAY
+COUNT
+```
+
+**Output**
+
+```text
+102 Aman 85
+101 Rahul 78
+2
+```
+
+**Explanation:**
+Beginning mein insertion ki wajah se `102` head ban gaya.
+
+### Edge Cases
+
+* Empty list
+* Sirf ek student
+* Multiple students
+* Duplicate roll number
+
+### Hints
+
+* `Student` class ke andar `Student* next` rakho.
+* `head` ko separately maintain karo.
+* New object dynamically create karo.
+* Beginning insertion mein `newNode->next` ko current head se connect karo.
+
+### Expected Time Complexity
+
+* Insert: `O(1)`
+* Display: `O(N)`
+* Count: `O(N)` if count variable maintain nahi kar rahe
+
+---
+
+# 🟢 Problem 2: Employee Management System [EASY]
+
+### Statement
+
+Ek company employees ko linked list mein maintain karti hai.
+
+Har employee ke paas:
+
+* Employee ID
+* Name
+* Salary
+* Next pointer
+
+Class ke member functions se implement karo:
+
+* Insert at end
+* Display employees
+* Find employee by ID
+
+### Input
+
+```text
+ADD id name salary
+SEARCH id
+DISPLAY
+```
+
+Constraints:
+
+* `1 ≤ N ≤ 10^5`
+* Salary `> 0`
+
+### Example
+
+```text
+ADD 101 Raj 30000
+ADD 102 Amit 45000
+SEARCH 102
+```
+
+Output:
+
+```text
+Employee Found
+102 Amit 45000
+```
+
+### Edge Cases
+
+* Search empty list
+* ID doesn't exist
+* Search first node
+* Search last node
+
+### Hints
+
+* End insertion ke liye `temp` pointer use karo.
+* Search ke liye head se traverse karo.
+* Data ko class members mein encapsulate karo.
+
+### Expected Time Complexity
+
+* Insert end: `O(N)`
+* Search: `O(N)`
+
+---
+
+# 🟡 Problem 3: Bank Transaction Linked List [MEDIUM]
+
+### Statement
+
+Ek bank account ki transactions linked list mein stored hain.
+
+Har transaction object mein:
+
+* Transaction ID
+* Amount
+* Type: `Deposit` / `Withdraw`
+* Next pointer
+
+Implement:
+
+1. Add transaction
+2. Display transactions
+3. Calculate current balance
+4. Find largest transaction
+
+### Input
+
+```text
+DEPOSIT 101 5000
+WITHDRAW 102 1500
+DEPOSIT 103 3000
+BALANCE
+MAX
+```
+
+### Example
+
+```text
+DEPOSIT 101 5000
+WITHDRAW 102 1500
+DEPOSIT 103 3000
+BALANCE
+```
+
+Output:
+
+```text
+Balance: 6500
+```
+
+### Edge Cases
+
+* No transactions
+* Only deposits
+* Only withdrawals
+* Withdrawal greater than current balance
+* Amount `0`
+
+### Hints
+
+Transaction object ko class mein represent karo.
+
+Balance calculate karte waqt:
+
+* Deposit → add
+* Withdrawal → subtract
+
+### Expected Time Complexity
+
+* Add: `O(1)` if inserting at head
+* Balance: `O(N)`
+* Maximum: `O(N)`
+
+---
+
+# 🟠 Problem 4: Delete Student by Roll Number [MEDIUM]
+
+### Statement
+
+College linked list mein students stored hain. Administrator ko kisi student ko roll number ke basis par remove karna hai.
+
+Implement:
+
+```text
+ADD
+DELETE roll
+DISPLAY
+```
+
+### Example
+
+Initial:
+
+```text
+101 → 102 → 103 → NULL
+```
+
+Delete `102`:
+
+```text
+101 → 103 → NULL
+```
+
+### Edge Cases
+
+Ye problem especially in cases ko handle kare:
+
+* Empty list
+* Delete head
+* Delete tail
+* Delete middle
+* Delete only node
+* Roll number doesn't exist
+
+### Hints
+
+Delete karne ke liye sirf current node enough nahi hota.
+
+Tumhe generally:
+
+```text
+previous
+current
+```
+
+jaise pointers maintain karne padenge.
+
+### Expected Time Complexity
+
+`O(N)`
+
+---
+
+# 🔴 Problem 5: Library Book Management [HARD]
+
+### Statement
+
+Library ke books ko linked list mein store kiya ja raha hai.
+
+Har `Book` class mein:
+
+* ISBN
+* Title
+* Author
+* Available/Issued status
+* Next pointer
+
+Implement:
+
+```text
+ADD
+SEARCH isbn
+ISSUE isbn
+RETURN isbn
+DISPLAY_AVAILABLE
+```
+
+### Example
+
+```text
+ADD 101 CPP_Basics Bjarne
+ADD 102 DSA_Guide Mark
+ISSUE 101
+DISPLAY_AVAILABLE
+```
+
+Output:
+
+```text
+102 DSA_Guide Mark
+```
+
+### Edge Cases
+
+* Book doesn't exist
+* Already issued book
+* Returning an available book
+* Empty library
+* Duplicate ISBN
+
+### Hints
+
+`Book` class ke methods design karo jaise:
+
+* `issueBook()`
+* `returnBook()`
+* `display()`
+
+Linked list management ko separate class mein rakhna aur cleaner architecture dega.
+
+### Expected Time Complexity
+
+* Search: `O(N)`
+* Issue: `O(N)`
+* Return: `O(N)`
+
+---
+
+# 🔴 Problem 6: Linked List Using Separate List Class [HARD]
+
+### Statement
+
+Ab architecture improve karo.
+
+Do classes banao conceptually:
+
+### `Node`
+
+Student ka data + `next`
+
+### `LinkedList`
+
+List ko manage kare:
+
+* `insertBeginning()`
+* `insertEnd()`
+* `deleteValue()`
+* `search()`
+* `display()`
+* `size()`
+
+User ko directly node pointers manipulate nahi karne chahiye.
+
+### Example
+
+```text
+LinkedList list;
+
+list.insertEnd(10);
+list.insertEnd(20);
+list.insertBeginning(5);
+list.deleteValue(20);
+list.display();
+```
+
+Expected:
+
+```text
+5 10
+```
+
+### Edge Cases
+
+* `head == nullptr`
+* One-node list
+* Delete head
+* Delete last
+* Delete nonexistent value
+* Repeated values
+
+### Hints
+
+Ye question **encapsulation** test karega.
+
+User-facing code ko linked-list ke internal pointers se separate rakho.
+
+### Expected Time Complexity
+
+* Beginning insertion: `O(1)`
+* End insertion: `O(N)`
+* Search: `O(N)`
+* Delete: `O(N)`
+
+---
+
+# 🔴 Problem 7: Reverse Linked List Using Class [HARD]
+
+### Statement
+
+Employee records ko linked list mein store kiya gaya hai.
+
+List ko **in-place reverse** karo.
+
+Original:
+
+```text
+101 → 102 → 103 → 104 → NULL
+```
+
+After reverse:
+
+```text
+104 → 103 → 102 → 101 → NULL
+```
+
+### Important Requirement
+
+❌ New linked list mat banao.
+❌ New nodes mat create karo.
+
+Existing nodes ke pointers modify karo.
+
+### Edge Cases
+
+* Empty list
+* One node
+* Two nodes
+* Large list
+
+### Hints
+
+Three pointers ke baare mein socho:
+
+```text
+previous
+current
+next
+```
+
+Har iteration mein current node ka `next` reverse karna hai.
+
+### Expected Time Complexity
+
+`O(N)`
+
+### Extra Space
+
+`O(1)`
+
+---
+
+# 🟣 Problem 8: Playlist Manager [DIFFICULT]
+
+### Statement
+
+Music player mein songs ko linked list mein maintain karo.
+
+Har `Song` object:
+
+* Song ID
+* Song name
+* Artist
+* Next
+* Previous
+
+Use **doubly linked list**.
+
+Implement:
+
+```text
+ADD
+DELETE
+NEXT
+PREVIOUS
+CURRENT
+DISPLAY
+```
+
+### Example
+
+```text
+ADD 1 SongA ArtistA
+ADD 2 SongB ArtistB
+ADD 3 SongC ArtistC
+
+CURRENT
+NEXT
+NEXT
+PREVIOUS
+```
+
+Expected navigation:
+
+```text
+SongA
+SongB
+SongC
+SongB
+```
+
+### Edge Cases
+
+* Empty playlist
+* One song
+* NEXT at last song
+* PREVIOUS at first song
+* Delete current song
+* Delete only song
+
+### Hints
+
+Doubly linked list mein:
+
+```text
+prev ← Node → next
+```
+
+Current song ke liye ek separate pointer maintain karo.
+
+### Expected Time Complexity
+
+* NEXT: `O(1)`
+* PREVIOUS: `O(1)`
+* Add: `O(1)` with tail
+* Delete current: `O(1)` if node pointer available
+
+---
+
+# 🟣 Problem 9: LRU Cache Using Classes [DIFFICULT]
+
+### Statement
+
+Ek browser ke paas limited cache capacity hai.
+
+Recently accessed pages ko cache mein rakha jata hai.
+
+Example:
+
+```text
+Capacity = 3
+
+A
+B
+C
+GET A
+PUT D
+```
+
+`A` recently accessed tha, isliye least recently used page `B` remove hoga.
+
+Final:
+
+```text
+D → A → C
+```
+
+### Requirement
+
+Use:
+
+* `Node` class
+* Doubly linked list
+* Hash map
+
+### Edge Cases
+
+* Capacity `1`
+* GET nonexistent key
+* Repeated GET
+* PUT existing key
+* Empty cache
+* Eviction
+
+### Hints
+
+Sirf linked list se `GET` efficient nahi hoga.
+
+Think:
+
+```text
+HashMap
+   ↓
+Node*
+   ↓
+Doubly Linked List
+```
+
+Hash map node ka address store kar sakta hai.
+
+### Expected Time Complexity
+
+Average:
+
+* `GET`: `O(1)`
+* `PUT`: `O(1)`
+
+---
+
+# 🔥 Problem 10: Hospital Patient Queue [DIFFICULT]
+
+### Statement
+
+Hospital mein patients queue mein wait karte hain.
+
+Har patient:
+
+* Patient ID
+* Name
+* Priority
+* Next pointer
+
+Priority:
+
+```text
+1 = Emergency
+2 = Serious
+3 = Normal
+```
+
+Patient ko priority ke according correct position par insert karo.
+
+### Example
+
+```text
+ADD 101 Rahul 3
+ADD 102 Aman 1
+ADD 103 Ravi 2
+```
+
+Output:
+
+```text
+102 Aman 1
+103 Ravi 2
+101 Rahul 3
+```
+
+### Edge Cases
+
+* Same priority
+* Empty queue
+* First patient
+* Highest priority insertion
+* Lowest priority insertion
+* Multiple emergency patients
+
+### Hints
+
+Normal linked-list insertion aur sorted insertion ko combine karo.
+
+Insertion ke waqt previous/current pointers ka use useful hoga.
+
+### Expected Time Complexity
+
+Insertion: `O(N)`
+
+---
+
+# 🧠 Bonus Interview Challenge
+
+## Problem 11: Deep Copy of a Linked List [INTERVIEW]
+
+Suppose tumhare paas:
+
+```text
+Original List
+10 → 20 → 30 → NULL
+```
+
+Iski **completely independent copy** create karo.
+
+Important:
+
+```text
+original node ≠ copied node
+```
+
+Agar copied list mein `20` change karo, original list ka `20` change nahi hona chahiye.
+
+### Test Cases
+
+* Empty list
+* One node
+* Multiple nodes
+* Modify copied list
+* Delete original list
+
+### Hint
+
+Har original node ke liye **new dynamically allocated node** create karna padega.
+
+### Expected Complexity
+
+`O(N)` time
+`O(N)` extra space
+
+---
+
+## 🏆 Tumhare liye recommended order
+
+Agar tum practice kar rahe ho, to:
+
+**1 → 2 → 4 → 6 → 3 → 7 → 5 → 8 → 10 → 11 → 9**
+
+Is sequence mein tum gradually:
+
+**Class → Node → `Node*` → `head` → insertion → deletion → traversal → encapsulation → doubly linked list → advanced pointer management → LRU**
+
+tak jaoge.
+
+
+Got it! Here are 6 beginner-level Singly Linked List problems in English, LeetCode style:
+
+---
+
+## **Problem 1: Student Roll Call**
+
+A school maintains a student attendance list. Each student has a roll number and name. When a student is present, they're added to the list. Print all students in the list.
+
+**Problem:** Create an SLL and traverse to print all nodes.
+
+**Input:**
+```
+Roll: 1, Name: "Raj"
+Roll: 2, Name: "Priya"
+Roll: 3, Name: "Amit"
+```
+
+**Expected Output:**
+```
+1 -> Raj
+2 -> Priya
+3 -> Amit
+```
+
+---
+
+## **Problem 2: Bus Queue**
+
+Passengers are waiting in a queue for the bus. When a new passenger arrives, they join at the end. When the bus leaves, passengers board from the front one by one.
+
+**Problem:** Simulate a queue - add passengers and remove them in order.
+
+**Input:**
+```
+Add: "Person1"
+Add: "Person2"
+Add: "Person3"
+Remove (first person boards)
+Add: "Person4"
+Print all waiting
+```
+
+**Expected Output:**
+```
+Removed: Person1
+Waiting passengers:
+Person2 -> Person3 -> Person4
+```
+
+---
+
+## **Problem 3: Print List in Reverse**
+
+You have a linked list of items. Print the list in reverse order (without actually reversing it).
+
+**Problem:** Traverse and print the linked list in reverse order using recursion or stack.
+
+**Input:**
+```
+List: 10 -> 20 -> 30 -> 40 -> None
+```
+
+**Expected Output:**
+```
+40
+30
+20
+10
+```
+
+---
+
+## **Problem 4: Remove Duplicate Elements**
+
+The student roll number list has duplicate entries. Remove all duplicates, keeping only the first occurrence.
+
+**Problem:** Delete duplicate nodes from SLL.
+
+**Input:**
+```
+1 -> 2 -> 2 -> 3 -> 3 -> 3 -> 4 -> None
+```
+
+**Expected Output:**
+```
+1 -> 2 -> 3 -> 4 -> None
+```
+
+---
+
+## **Problem 5: Find Middle Element**
+
+A music playlist has several songs. Find the middle song in the playlist.
+
+**Problem:** Find the middle node of the linked list.
+
+**Input:**
+```
+Songs: "Song1" -> "Song2" -> "Song3" -> "Song4" -> "Song5" -> None
+```
+
+**Expected Output:**
+```
+Middle song: Song3
+```
+
+---
+
+## **Problem 6: Delete Nth Node from End**
+
+You have a list of comments. Delete the Nth comment from the end.
+
+**Problem:** Delete the Nth node from the end of the list.
+
+**Input:**
+```
+List: 1 -> 2 -> 3 -> 4 -> 5 -> None
+N = 2 (delete second from end, which is 4)
+```
+
+**Expected Output:**
+```
+1 -> 2 -> 3 -> 5 -> None
+```
+
+---
+
+## **Approach Hints:**
+1. **Problem 1:** Simple traversal loop
+2. **Problem 2:** Insert at end, delete from front
+3. **Problem 3:** Recursion or stack-based approach
+4. **Problem 4:** Compare current with next node
+5. **Problem 5:** Slow-fast pointer technique
+6. **Problem 6:** Find (N-1)th node from end, adjust links
+
+---
+
+**Which problem do you want to solve first? Or want to share your solution?** 💻

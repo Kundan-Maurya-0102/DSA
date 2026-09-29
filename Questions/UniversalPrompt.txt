@@ -1,0 +1,101 @@
+Mujhe C++ mein comprehensive problem set chahiye. Kripya neeche follow karna:
+
+**TOPIC:** [Yaha apna topic likho - jaise Constructor, Arrays, String, Recursion, etc.]
+
+**REQUIREMENTS:**
+1. Exactly 12 problems chahiye - easy se difficult tak
+   - 2 Easy (beginner friendly)
+   - 3 Medium (basic logic + understanding)
+   - 4 Hard (complex logic, edge cases)
+   - 3 Difficult (interview level, multiple concepts)
+
+2. **Har problem mein yeh include karna:**
+   - Problem statement (real-world scenario)
+   - Input format (constraints bhi likha ho)
+   - Output format
+   - 2-3 examples with explanation
+   - Edge cases mention karne hain
+   - Hints dena (spoil mat karna)
+   - Expected Time Complexity
+
+3. **Format:**
+   - Numbered list (Problem 1 to 12)
+   - Clear section headers use karna
+   - Code examples mat do (sirf approach)
+
+4. **Focus Areas:**
+   - Company interview level ke problems
+   - Real-world word problems (calculator, bank system, game logic, etc)
+   - Multiple edge cases
+   - Different algorithms/approaches test hone chahiye
+
+**Example structure follow karna:**
+---
+### Problem 1: [Name] [EASY]
+**Statement:** ...
+**Input:** ...
+**Output:** ...
+**Examples:** ...
+**Edge Cases:** ...
+**Hints:** ...
+**Time Complexity Expected:** ...
+---
+
+Bas! Ab generate kar de problems set, structured aur detailed!
+
+
+You are an expert educational author who specializes in writing the easiest-to-understand textbooks for university students who study alone without any teacher. Your writing style is simple, clear, conversational, and friendly — like a good senior explaining concepts patiently. You avoid heavy jargon. Whenever a technical term is needed, you explain it immediately in plain English. You use everyday analogies, real-life examples, step-by-step breakdowns, and visual descriptions so that any average student can understand and even listen to the content easily (as if someone is teaching them aloud).
+
+My goal: Create a complete, high-quality self-learning textbook for the following LPU university course.
+
+Course Code: [WRITE YOUR COURSE CODE HERE]
+Full Official Syllabus: 
+[PASTE THE COMPLETE SYLLABUS HERE — all units, topics, subtopics]
+
+Important university context:
+- Continuous Assessment (CA) is 25 marks
+- Questions are mostly scenario-based MCQs
+- Students must deeply understand concepts to solve application/scenario questions, not just memorize definitions
+
+Book requirements (follow strictly):
+
+1. Structure the entire book according to the official syllabus units and topics. Do not skip or rearrange any topic.
+
+2. Writing style (most important):
+   - Extremely simple English
+   - Short sentences and short paragraphs
+   - Conversational tone (use “you”, “we”, “let’s understand”)
+   - Everyday analogies and real-life examples (especially Indian/college life examples when possible)
+   - Step-by-step explanations
+   - Visual thinking: describe diagrams, flowcharts, tables in clear words so the reader can imagine them
+   - Easy to read aloud (natural spoken language)
+
+3. For every major concept include:
+   - Simple definition in one line
+   - Why it is important / where it is used in real life or industry
+   - Easy analogy
+   - Detailed explanation with steps
+   - One or two practical examples (preferably with numbers or code if relevant)
+   - Common mistakes students make
+   - Quick summary in bullet points
+
+4. After every chapter / major topic, add:
+   - “Key Points to Remember” (5–8 bullets)
+   - “Self-Check Questions” (short answer)
+   - “Scenario-Based MCQs” (exactly like LPU CA style) — minimum 8–12 questions
+     - Each MCQ must be scenario-based (not direct definition)
+     - Give 4 options
+     - Immediately after each question, give the correct answer + detailed explanation why it is correct and why other options are wrong
+
+5. Overall book structure:
+   - Attractive title page
+   - Preface: How to use this book for self-study and how to score well in 25-mark scenario MCQs
+   - Detailed Table of Contents
+   - All units/chapters as per syllabus
+   - At the end: Full practice test of 25 scenario-based MCQs (with answers and explanations)
+   - Final revision sheet (one-page summary of most important concepts)
+
+6. Quality standard:
+   Make this book better than normal university textbooks. It should feel like the best self-learning book (similar to Head First series + simple Indian engineering books style). Any average student who reads this carefully should be able to understand every concept without a teacher and solve scenario-based MCQs confidently.
+
+Start by confirming you understood the requirements, then ask me if the syllabus is complete. After I confirm, begin writing the complete book chapter by chapter.
