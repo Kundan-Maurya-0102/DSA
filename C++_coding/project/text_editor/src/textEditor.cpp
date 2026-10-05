@@ -14,6 +14,7 @@ void textEditorCanvasObject::insert(string data){
     tmp->next = nullptr;
     if(head==NULL){
         head = tmp;
+        top++;
     }
     else{
         Node * current = head;
@@ -26,6 +27,10 @@ void textEditorCanvasObject::insert(string data){
 }
 void textEditorCanvasObject::show()
 {
+    if(top==-1){
+        cout << "canva is Empty"<<endl;
+        return;
+    }
     Node* tmp = head;
     cout << endl << "---------------------------------------"<<endl;
     while (tmp != nullptr)
@@ -37,6 +42,7 @@ void textEditorCanvasObject::show()
 }
 void textEditorCanvasObject::pop()
 {
+
     if (head == nullptr)
     {
         cout << "Empty Canvas" << endl;
@@ -45,6 +51,7 @@ void textEditorCanvasObject::pop()
 
     if (head->next == nullptr)
     {
+        top--;
         delete head;
         head = nullptr;
         return;
@@ -54,9 +61,10 @@ void textEditorCanvasObject::pop()
 
     while (tmp->next->next != nullptr)
     {
+        top--;
         tmp = tmp->next;
     }
-
+    top--;
     delete tmp->next;
     tmp->next = nullptr;
 }
@@ -91,3 +99,7 @@ void textEditorCanvasObject::writes(){
 }
 
 //g++ main.cpp src/textEditor.cpp -Iinclude -o build/text_editor
+//g++ main.cpp src/textEditor.cpp -Iinclude -o build/text_editor
+
+
+
