@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string>
+#include<algorithm>
 using namespace std;
 int main(){
     long int n;
@@ -16,5 +18,14 @@ int main(){
         }
     }
     cout << count << endl;
+
+
+    string s= "Kundan";
+    char k = 'k';
+    if(isalnum(k)){
+
+    }
+    char x = tolower(k);
+
     return 0;
 }
